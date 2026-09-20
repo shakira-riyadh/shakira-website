@@ -5,18 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>African Housemaids & Nannies in Riyadh | Shakirah Domestic Staffing</title>
   <meta name="description" content="Find experienced, pre-vetted African housemaids, nannies, and domestic helpers in Riyadh. Professional recruitment and reliable home support tailored for Saudi families." />
-  <link rel="canonical" href="https://shakira-riyadh.github.io/shakira-website/" />
+  <link rel="canonical" href="https://shakiramaidsriyadh.com/" />
 
   <!-- Multi-Language Optimization (Hreflang) -->
-  <link rel="alternate" hreflang="en" href="https://shakira-riyadh.github.io/shakira-website/" />
-  <link rel="alternate" hreflang="ar" href="https://shakira-riyadh.github.io/shakira-website/ar/" />
-  <link rel="alternate" hreflang="x-default" href="https://shakira-riyadh.github.io/shakira-website/" />
+  <link rel="alternate" hreflang="en" href="https://shakiramaidsriyadh.com/" />
+  <link rel="alternate" hreflang="ar" href="https://shakiramaidsriyadh.com/ar/" />
+  <link rel="alternate" hreflang="x-default" href="https://shakiramaidsriyadh.com/" />
 
   <!-- Open Graph / Social Media -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content="African Housemaids & Nannies in Riyadh | Shakirah Domestic Staffing" />
   <meta property="og:description" content="Connecting Riyadh households with reliable, professionally trained African housemaids and nannies." />
-  <meta property="og:url" content="https://shakira-riyadh.github.io/shakira-website/" />
+  <meta property="og:url" content="https://shakiramaidsriyadh.com/" />
   <meta property="og:image" content="https://images.unsplash.com/photo-1581578731548-c64695cc6952" />
 
   <!-- Preload Hero Image for Core Web Vitals Performance -->
@@ -29,8 +29,8 @@
     "@type": "EmploymentAgency",
     "name": "Shakirah Domestic Staffing",
     "image": "https://images.unsplash.com/photo-1581578731548-c64695cc6952",
-    "@id": "https://shakira-riyadh.github.io/shakira-website/#organization",
-    "url": "https://shakira-riyadh.github.io/shakira-website/",
+    "@id": "https://shakiramaidsriyadh.com/#organization",
+    "url": "https://shakiramaidsriyadh.com/",
     "telephone": "+966572453774",
     "priceRange": "$$",
     "description": "Premium recruitment agency in Riyadh providing experienced, vetted African housemaids, nannies, and domestic staff.",
@@ -67,6 +67,7 @@
       --primary: #1b4332;
       --primary-light: #2d6a4f;
       --accent: #d4af37;
+      --whatsapp: #25d366;
       --text-dark: #1f2937;
       --text-muted: #6b7280;
       --bg-light: #f9fafb;
@@ -89,6 +90,29 @@
       line-height: 1.6;
     }
 
+    /* Top Bar */
+    .top-bar {
+      background: var(--primary);
+      color: var(--white);
+      padding: 0.5rem 1rem;
+      font-size: 0.85rem;
+    }
+
+    .top-bar-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .top-bar a {
+      color: var(--accent);
+      text-decoration: none;
+      margin-left: 1rem;
+    }
+
+    /* Navigation */
     header {
       background: var(--white);
       border-bottom: 1px solid var(--border);
@@ -117,7 +141,13 @@
       color: var(--accent);
     }
 
-    .lang-toggle {
+    .nav-actions {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+    }
+
+    .btn-secondary {
       background: var(--bg-light);
       border: 1px solid var(--border);
       padding: 0.4rem 0.8rem;
@@ -127,12 +157,13 @@
       color: var(--primary);
     }
 
+    /* Hero */
     .hero {
       background: linear-gradient(rgba(27, 67, 50, 0.85), rgba(27, 67, 50, 0.85)), url('https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=80&w=900&auto=format&fit=crop');
       background-size: cover;
       background-position: center;
       color: var(--white);
-      padding: 4rem 1rem;
+      padding: 4.5rem 1rem;
       text-align: center;
     }
 
@@ -168,6 +199,7 @@
       transform: translateY(-2px);
     }
 
+    /* Container & Layout */
     .container {
       max-width: 1100px;
       margin: 0 auto;
@@ -212,12 +244,16 @@
       margin-bottom: 0.5rem;
     }
 
+    /* Candidate Cards */
     .profile-card {
       background: var(--white);
       border: 1px solid var(--border);
       border-radius: var(--radius);
       padding: 1.5rem;
       box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
 
     .profile-header {
@@ -237,6 +273,7 @@
       align-items: center;
       justify-content: center;
       font-weight: 700;
+      font-size: 1.1rem;
     }
 
     .profile-header h3 {
@@ -257,28 +294,143 @@
       border-radius: 4px;
       font-size: 0.8rem;
       font-weight: 600;
-      margin-top: 0.5rem;
+      margin-top: 0.8rem;
     }
 
-    .faq-item {
+    .profile-action {
+      margin-top: 1.2rem;
+      text-align: center;
+    }
+
+    .profile-action a {
+      display: block;
+      background: var(--primary);
+      color: var(--white);
+      padding: 0.5rem;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    /* Interactive Accordion FAQ */
+    .faq-container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .faq-accordion {
       background: var(--white);
       border: 1px solid var(--border);
-      border-radius: 8px;
-      margin-bottom: 1rem;
-      padding: 1rem 1.5rem;
+      border-radius: var(--radius);
+      margin-bottom: 0.8rem;
+      overflow: hidden;
     }
 
-    .faq-item h3 {
+    .faq-question {
+      width: 100%;
+      background: none;
+      border: none;
+      padding: 1.2rem 1.5rem;
+      text-align: left;
       font-size: 1.05rem;
+      font-weight: 600;
       color: var(--primary);
-      margin-bottom: 0.4rem;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
 
+    html[dir="rtl"] .faq-question {
+      text-align: right;
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease, padding 0.3s ease;
+      padding: 0 1.5rem;
+      color: var(--text-dark);
+      background: #fafafa;
+    }
+
+    .faq-accordion.active .faq-answer {
+      padding: 1rem 1.5rem 1.2rem 1.5rem;
+      max-height: 200px;
+    }
+
+    /* Floating WhatsApp Button */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: var(--whatsapp);
+      color: white;
+      width: 60px;
+      height: 60px;
+      border-radius: 50px;
+      text-align: center;
+      font-size: 30px;
+      box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+    }
+
+    html[dir="rtl"] .whatsapp-float {
+      right: auto;
+      left: 20px;
+    }
+
+    /* Modal Disclosures */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.5);
+      z-index: 2000;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal-content {
+      background: var(--white);
+      padding: 2rem;
+      border-radius: var(--radius);
+      max-width: 600px;
+      width: 90%;
+      max-height: 80vh;
+      overflow-y: auto;
+      position: relative;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    html[dir="rtl"] .modal-close {
+      right: auto;
+      left: 1rem;
+    }
+
+    /* Footer */
     footer {
       background: var(--primary);
       color: var(--white);
       text-align: center;
-      padding: 2rem 1rem;
+      padding: 2.5rem 1rem;
       margin-top: 3rem;
       font-size: 0.9rem;
     }
@@ -287,17 +439,50 @@
       color: var(--accent);
       text-decoration: none;
     }
+
+    .footer-links {
+      margin-top: 1rem;
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+    }
+
+    .footer-links button {
+      background: none;
+      border: none;
+      color: var(--white);
+      cursor: pointer;
+      text-decoration: underline;
+      font-size: 0.85rem;
+    }
   </style>
 </head>
 <body>
 
+  <!-- Top Contact Bar -->
+  <div class="top-bar">
+    <div class="top-bar-container">
+      <span data-en="📍 Serving All Neighborhoods in Riyadh, KSA" data-ar="📍 نخدم جميع أحياء مدينة الرياض، المملكة العربية السعودية">
+        📍 Serving All Neighborhoods in Riyadh, KSA
+      </span>
+      <div>
+        <a href="tel:+966572453774">📞 +966 57 245 3774</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Navigation Header -->
   <header>
     <div class="nav-container">
       <a href="#" class="logo">Shakirah <span>Staffing</span></a>
-      <button class="lang-toggle" onclick="toggleLanguage()" id="langBtn">العربية</button>
+      <div class="nav-actions">
+        <button class="btn-secondary" onclick="shareWebsite()" id="shareBtn" title="Share Website">🔗</button>
+        <button class="btn-secondary" onclick="toggleLanguage()" id="langBtn">العربية</button>
+      </div>
     </div>
   </header>
 
+  <!-- Hero Section -->
   <section class="hero">
     <div class="hero-content">
       <h1 id="heroTitle" data-en="Experienced African Housemaids & Nannies in Riyadh" data-ar="عاملات منزلية ومربيات أفريقيات ذوات خبرة في الرياض">
@@ -306,7 +491,7 @@
       <p id="heroSub" data-en="Reliable, pre-screened, and professionally trained domestic helpers tailored for households in Al Malqa, Al Yasmin, Al Olaya, and across Riyadh." data-ar="عمالة منزلية موثوقة ومفحوصة ومدربة احترافياً لتلبية احتياجات الأسر في الملقا، الياسمين، العليا، وكافة أحياء الرياض.">
         Reliable, pre-screened, and professionally trained domestic helpers tailored for households in Al Malqa, Al Yasmin, Al Olaya, and across Riyadh.
       </p>
-      <a href="https://wa.me/966572453774" class="cta-btn" id="ctaBtn" data-en="Request Domestic Staff on WhatsApp" data-ar="طلب عمالة منزلية عبر الواتساب">
+      <a href="https://wa.me/966572453774?text=Hello%20Shakirah%20Staffing,%20I%20am%20looking%20for%20an%20experienced%20African%20housemaid/nanny%20in%20Riyadh." class="cta-btn" id="ctaBtn" data-en="Request Domestic Staff on WhatsApp" data-ar="طلب عمالة منزلية عبر الواتساب">
         Request Domestic Staff on WhatsApp
       </a>
     </div>
@@ -342,77 +527,168 @@
       </div>
     </section>
 
-    <!-- Candidate Overview Section -->
+    <!-- Candidate Profiles Section -->
     <section style="margin-top: 4rem;">
       <div class="section-head">
-        <span class="kicker" id="kicker2" data-en="Available Candidates" data-ar="المرشحات المتاحات">Available Candidates</span>
-        <h2 id="heading2" data-en="Sample African Domestic Profiles" data-ar="نماذج من سير العاملات الأفريقيات">Sample African Domestic Profiles</h2>
+        <span class="kicker" id="kicker2" data-en="Available Staff Overview" data-ar="نظرة عامة على الكوادر المتاحة">Available Staff Overview</span>
+        <h2 id="heading2" data-en="Sample Candidate Profiles" data-ar="نماذج من سير العاملات">Sample Candidate Profiles</h2>
       </div>
       <div class="grid">
+        
         <article class="profile-card">
-          <div class="profile-header">
-            <div class="profile-avatar">M.N</div>
-            <div>
-              <h3>Mary N.</h3>
-              <span data-en="4+ Years Experience • Riyadh" data-ar="خبرة +4 سنوات • الرياض">4+ Years Experience • Riyadh</span>
+          <div>
+            <div class="profile-header">
+              <div class="profile-avatar">M.N</div>
+              <div>
+                <h3>Mary N.</h3>
+                <span data-en="4+ Years Experience • Riyadh" data-ar="خبرة +4 سنوات • الرياض">4+ Years Experience • Riyadh</span>
+              </div>
             </div>
+            <p data-en="Experienced nanny specializing in infant care, light housekeeping, and meal preparation." data-ar="مربية ذو خبرة متخصصة في رعاية الرضع، الأعمال المنزلية الخفيفة، وإعداد الوجبات.">
+              Experienced nanny specializing in infant care, light housekeeping, and meal preparation.
+            </p>
+            <span class="tag" data-en="African Nanny & Housemaid" data-ar="مربية وعاملة منزلية أفريقية">African Nanny & Housemaid</span>
           </div>
-          <p data-en="Experienced nanny specializing in infant care, light housekeeping, and meal preparation." data-ar="مربية ذو خبرة متخصصة في رعاية الرضع، الأعمال المنزلية الخفيفة، وإعداد الوجبات.">
-            Experienced nanny specializing in infant care, light housekeeping, and meal preparation.
-          </p>
-          <span class="tag" data-en="African Nanny & Housemaid" data-ar="مربية وعاملة منزلية أفريقية">African Nanny & Housemaid</span>
+          <div class="profile-action">
+            <a href="https://wa.me/966572453774?text=Hello,%20I%20am%20interested%20in%20candidate%20profile%20Mary%20N." data-en="Inquire About Mary" data-ar="استفسر عن ماري">Inquire About Mary</a>
+          </div>
         </article>
 
         <article class="profile-card">
-          <div class="profile-header">
-            <div class="profile-avatar">G.K</div>
-            <div>
-              <h3>Grace K.</h3>
-              <span data-en="6+ Years Experience • Riyadh" data-ar="خبرة +6 سنوات • الرياض">6+ Years Experience • Riyadh</span>
+          <div>
+            <div class="profile-header">
+              <div class="profile-avatar">G.K</div>
+              <div>
+                <h3>Grace K.</h3>
+                <span data-en="6+ Years Experience • Riyadh" data-ar="خبرة +6 سنوات • الرياض">6+ Years Experience • Riyadh</span>
+              </div>
             </div>
+            <p data-en="Skilled housemaid focused on deep cleaning, laundry management, and family kitchen assistance." data-ar="عاملة منزلية ماهرة متخصصة في التنظيف العميق، الغسيل والكوي، ومساعدة المطبخ.">
+              Skilled housemaid focused on deep cleaning, laundry management, and family kitchen assistance.
+            </p>
+            <span class="tag" data-en="African Senior Housekeeper" data-ar="عاملة تدبير منزلي أفريقية">African Senior Housekeeper</span>
           </div>
-          <p data-en="Skilled housemaid focused on deep cleaning, laundry management, and family kitchen assistance." data-ar="عاملة منزلية ماهرة متخصصة في التنظيف العميق، الغسيل والكوي، ومساعدة المطبخ.">
-            Skilled housemaid focused on deep cleaning, laundry management, and family kitchen assistance.
-          </p>
-          <span class="tag" data-en="African Senior Housekeeper" data-ar="عاملة تدبير منزلي أفريقية">African Senior Housekeeper</span>
+          <div class="profile-action">
+            <a href="https://wa.me/966572453774?text=Hello,%20I%20am%20interested%20in%20candidate%20profile%20Grace%20K." data-en="Inquire About Grace" data-ar="استفسر عن جريس">Inquire About Grace</a>
+          </div>
         </article>
+
+        <article class="profile-card">
+          <div>
+            <div class="profile-header">
+              <div class="profile-avatar">S.A</div>
+              <div>
+                <h3>Sarah A.</h3>
+                <span data-en="3+ Years Experience • Riyadh" data-ar="خبرة +3 سنوات • الرياض">3+ Years Experience • Riyadh</span>
+              </div>
+            </div>
+            <p data-en="Dedicated domestic helper specializing in elderly care support and daily home organization." data-ar="عاملة مخصصة لمساعدة كبار السن والتنظيم اليومي للمنزل.">
+              Dedicated domestic helper specializing in elderly care support and daily home organization.
+            </p>
+            <span class="tag" data-en="African Caregiver & Helper" data-ar="مقدمة رعاية وعاملة أفريقية">African Caregiver & Helper</span>
+          </div>
+          <div class="profile-action">
+            <a href="https://wa.me/966572453774?text=Hello,%20I%20am%20interested%20in%20candidate%20profile%20Sarah%20A." data-en="Inquire About Sarah" data-ar="استفسر عن سارة">Inquire About Sarah</a>
+          </div>
+        </article>
+
       </div>
     </section>
 
-    <!-- FAQ Section -->
+    <!-- FAQ Accordion Section -->
     <section style="margin-top: 4rem;">
       <div class="section-head">
         <span class="kicker" id="kicker3" data-en="Frequently Asked Questions" data-ar="الأسئلة الشائعة">Frequently Asked Questions</span>
         <h2 id="heading3" data-en="Common Hiring Questions" data-ar="أسئلة الاستقدام الشائعة">Common Hiring Questions</h2>
       </div>
-      
-      <div class="faq-item">
-        <h3 data-en="How long does candidate placement take in Riyadh?" data-ar="كم يستغرق اختيار وتوظيف العاملة في الرياض؟">How long does candidate placement take in Riyadh?</h3>
-        <p data-en="Available local profiles can be selected immediately, while direct placements typically take between 2 to 4 weeks depending on processing." data-ar="يمكن اختيار الملفات المتاحة محلياً فوراً، بينما يستغرق التوظيف المباشر عادة من أسبوعين إلى 4 أسابيع حسب الإجراءات.">
-          Available local profiles can be selected immediately, while direct placements typically take between 2 to 4 weeks depending on processing.
-        </p>
-      </div>
 
-      <div class="faq-item">
-        <h3 data-en="Do candidate profiles include medical fit tests?" data-ar="هل تتضمن ملفات المرشحات الفحوصات الطبية؟">Do candidate profiles include medical fit tests?</h3>
-        <p data-en="Yes, all African housemaids and nannies undergo comprehensive medical checks through accredited health facilities prior to assignment." data-ar="نعم، تخضع جميع العاملات والمربيات الأفريقيات لفحوصات طبية شاملة عبر مراكز معتمدة قبل البدء.">
-          Yes, all African housemaids and nannies undergo comprehensive medical checks through accredited health facilities prior to assignment.
-        </p>
+      <div class="faq-container">
+        
+        <div class="faq-accordion">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span data-en="How long does candidate placement take in Riyadh?" data-ar="كم يستغرق اختيار وتوظيف العاملة في الرياض؟">How long does candidate placement take in Riyadh?</span>
+            <span>+</span>
+          </button>
+          <div class="faq-answer">
+            <p data-en="Available local profiles can be selected immediately, while direct placements typically take between 2 to 4 weeks depending on visa and travel processing." data-ar="يمكن اختيار الملفات المتاحة محلياً فوراً، بينما يستغرق التوظيف المباشر عادة من أسبوعين إلى 4 أسابيع حسب إجراءات التأشيرة والسفر.">
+              Available local profiles can be selected immediately, while direct placements typically take between 2 to 4 weeks depending on visa and travel processing.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-accordion">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span data-en="Do candidate profiles include medical fit tests?" data-ar="هل تتضمن ملفات المرشحات الفحوصات الطبية؟">Do candidate profiles include medical fit tests?</span>
+            <span>+</span>
+          </button>
+          <div class="faq-answer">
+            <p data-en="Yes, all African housemaids and nannies undergo comprehensive medical checks through accredited health facilities prior to deployment." data-ar="نعم، تخضع جميع العاملات والمربيات الأفريقيات لفحوصات طبية شاملة عبر مراكز معتمدة قبل البدء.">
+              Yes, all African housemaids and nannies undergo comprehensive medical checks through accredited health facilities prior to deployment.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-accordion">
+          <button class="faq-question" onclick="toggleFaq(this)">
+            <span data-en="What areas in Riyadh do you serve?" data-ar="ما هي المناطق التي تخدمونها في الرياض؟">What areas in Riyadh do you serve?</span>
+            <span>+</span>
+          </button>
+          <div class="faq-answer">
+            <p data-en="We serve all major residential areas across Riyadh, including Al Malqa, Al Yasmin, Al Olaya, Al Narjis, and surrounding districts." data-ar="نخدم جميع المناطق السكنية الرئيسية في الرياض، بما في ذلك الملقا، الياسمين، العليا، النرجس، والأحياء المجاورة.">
+              We serve all major residential areas across Riyadh, including Al Malqa, Al Yasmin, Al Olaya, Al Narjis, and surrounding districts.
+            </p>
+          </div>
+        </div>
+
       </div>
     </section>
 
   </main>
 
+  <!-- Floating WhatsApp Action Button -->
+  <a href="https://wa.me/966572453774?text=Hello%20Shakirah%20Staffing,%20I%20have%20an%20inquiry%20regarding%20domestic%20staff." class="whatsapp-float" target="_blank" aria-label="Contact via WhatsApp">
+    💬
+  </a>
+
+  <!-- Footer -->
   <footer>
     <p>&copy; 2026 Shakirah Domestic Staffing. Serving Riyadh, Saudi Arabia.</p>
     <p style="margin-top: 0.5rem;">
       <a href="https://wa.me/966572453774">+966 57 245 3774</a> | Riyadh, KSA
     </p>
+
+    <div class="footer-links">
+      <button onclick="openModal('privacyModal')" data-en="Privacy Policy" data-ar="سياسة الخصوصية">Privacy Policy</button>
+      <button onclick="openModal('termsModal')" data-en="Terms of Service" data-ar="الشروط والأحكام">Terms of Service</button>
+    </div>
   </footer>
+
+  <!-- Privacy Policy Modal -->
+  <div id="privacyModal" class="modal">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeModal('privacyModal')">&times;</button>
+      <h3 style="color: var(--primary); margin-bottom: 1rem;" data-en="Privacy Policy" data-ar="سياسة الخصوصية">Privacy Policy</h3>
+      <p data-en="Shakirah Domestic Staffing respects your privacy. Any personal information shared via WhatsApp or contact forms is used solely for candidate selection and client service fulfillment in accordance with local regulations in KSA." data-ar="تحترم مكتب شقيرة للعمالة المنزلية خصوصيتك. تُستخدم أي معلومات شخصية يتم مشاركتها عبر الواتساب أو النماذج فقط لاختيار المرشحات وتقديم الخدمة وفق الأنظمة المحلية.">
+        Shakirah Domestic Staffing respects your privacy. Any personal information shared via WhatsApp or contact forms is used solely for candidate selection and client service fulfillment in accordance with local regulations in KSA.
+      </p>
+    </div>
+  </div>
+
+  <!-- Terms of Service Modal -->
+  <div id="termsModal" class="modal">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeModal('termsModal')">&times;</button>
+      <h3 style="color: var(--primary); margin-bottom: 1rem;" data-en="Terms of Service" data-ar="الشروط والأحكام">Terms of Service</h3>
+      <p data-en="All placements and hiring arrangements made through Shakirah Domestic Staffing adhere to Saudi Arabian labor regulations and official domestic work guidelines." data-ar="تخضع جميع التوظيفات والترتيبات عبر مكتب شقيرة للعمالة المنزلية لأنظمة العمل واللوائح الخاصة بالعمالة المنزلية في المملكة العربية السعودية.">
+        All placements and hiring arrangements made through Shakirah Domestic Staffing adhere to Saudi Arabian labor regulations and official domestic work guidelines.
+      </p>
+    </div>
+  </div>
 
   <script>
     let currentLang = 'en';
 
+    // Toggle Language Function
     function toggleLanguage() {
       currentLang = currentLang === 'en' ? 'ar' : 'en';
       document.documentElement.lang = currentLang;
@@ -427,6 +703,37 @@
           el.innerText = text;
         }
       });
+    }
+
+    // Toggle Accordion FAQ
+    function toggleFaq(button) {
+      const accordion = button.parentElement;
+      accordion.classList.toggle('active');
+      const icon = button.querySelector('span:last-child');
+      icon.innerText = accordion.classList.contains('active') ? '−' : '+';
+    }
+
+    // Modal Control
+    function openModal(modalId) {
+      document.getElementById(modalId).style.display = 'flex';
+    }
+
+    function closeModal(modalId) {
+      document.getElementById(modalId).style.display = 'none';
+    }
+
+    // Web Share API
+    function shareWebsite() {
+      if (navigator.share) {
+        navigator.share({
+          title: 'Shakirah Domestic Staffing',
+          text: 'Experienced African Housemaids & Nannies in Riyadh',
+          url: window.location.href,
+        }).catch(console.error);
+      } else {
+        navigator.clipboard.writeText(window.location.href);
+        alert('Website link copied to clipboard!');
+      }
     }
   </script>
 </body>
