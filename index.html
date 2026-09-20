@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="manifest" href="/site.webmanifest">
@@ -118,9 +118,9 @@
   }
   .brand-text span{font-size:0.72rem; color:var(--ink-soft); font-weight:500;}
 
-  nav.primary-nav{display:flex; gap:34px;}
+  nav.primary-nav{display:flex; gap:28px;}
   nav.primary-nav a{
-    font-size:0.95rem; font-weight:500; color:var(--ink);
+    font-size:0.92rem; font-weight:500; color:var(--ink);
     position:relative; padding:4px 0;
   }
   nav.primary-nav a::after{
@@ -130,7 +130,7 @@
   }
   nav.primary-nav a:hover::after{transform:scaleX(1);}
 
-  .header-actions{display:flex; align-items:center; gap:14px;}
+  .header-actions{display:flex; align-items:center; gap:12px;}
   .lang-toggle{
     display:flex; border:1px solid var(--green-deep); border-radius:999px; overflow:hidden;
     font-size:0.8rem; font-weight:600;
@@ -141,26 +141,25 @@
   }
   .lang-toggle button.active{background:var(--green-deep); color:var(--white);}
 
-  /* ---------- Share Button CSS ---------- */
   .btn-share{
-    display:flex; align-items:center; gap:8px;
+    display:flex; align-items:center; gap:6px;
     background:transparent; color:var(--green-deep);
     border:1px solid var(--green-deep);
-    padding:8px 16px; border-radius:999px; font-weight:600; font-size:0.88rem;
+    padding:7px 14px; border-radius:999px; font-weight:600; font-size:0.85rem;
     cursor:pointer; font-family:inherit;
     transition:background .2s ease, color .2s ease;
   }
   .btn-share:hover{background:var(--green-deep); color:var(--white);}
-  .btn-share svg{width:16px;height:16px;flex-shrink:0;}
+  .btn-share svg{width:15px;height:15px;flex-shrink:0;}
 
   .btn-whatsapp{
-    display:flex; align-items:center; gap:9px;
+    display:flex; align-items:center; gap:8px;
     background:var(--green-deep); color:var(--white);
-    padding:10px 18px; border-radius:999px; font-weight:600; font-size:0.92rem;
+    padding:9px 16px; border-radius:999px; font-weight:600; font-size:0.88rem;
     transition:background .2s ease;
   }
   .btn-whatsapp:hover{background:var(--green-mid);}
-  .btn-whatsapp svg{width:18px;height:18px;flex-shrink:0;}
+  .btn-whatsapp svg{width:17px;height:17px;flex-shrink:0;}
 
   .nav-toggle{display:none; background:none; border:none; cursor:pointer; padding:6px;}
   .nav-toggle svg{width:26px;height:26px;color:var(--green-deep);}
@@ -271,6 +270,58 @@
   .service-card h3{font-size:1.18rem;}
   .service-card p{margin-top:8px; color:var(--ink-soft); font-size:0.95rem;}
 
+  /* ---------- VETTING & SAFETY BADGES ---------- */
+  .vetting-box{
+    background:var(--white); border-radius:2px 28px 2px 28px;
+    padding:36px; border:1px solid rgba(15,61,46,0.12); margin-bottom:48px;
+    box-shadow:0 12px 30px -10px rgba(15,61,46,0.06);
+  }
+  .vetting-grid{
+    display:grid; grid-template-columns:repeat(4,1fr); gap:24px; margin-top:24px;
+  }
+  .vetting-card{
+    display:flex; flex-direction:column; gap:8px;
+  }
+  .vetting-card .badge-ico{
+    width:42px; height:42px; border-radius:50%; background:var(--sage);
+    display:flex; align-items:center; justify-content:center; color:var(--green-deep);
+  }
+  .vetting-card h4{font-size:1rem; color:var(--green-deep); margin:0;}
+  .vetting-card p{font-size:0.86rem; color:var(--ink-soft);}
+
+  /* ---------- SAMPLE PROFILES SECTION ---------- */
+  .profiles-grid{
+    display:grid; grid-template-columns:repeat(3,1fr); gap:24px;
+  }
+  .profile-card{
+    background:var(--white); border-radius:2px 24px 2px 24px; border:1px solid rgba(15,61,46,0.08);
+    padding:28px; display:flex; flex-direction:column; justify-space-between; gap:16px;
+  }
+  .profile-header{display:flex; align-items:center; gap:14px;}
+  .profile-avatar{
+    width:50px; height:50px; border-radius:50%; background:var(--green-deep); color:var(--gold-soft);
+    display:flex; align-items:center; justify-content:center; font-family:"Fraunces",serif; font-weight:600; font-size:1.1rem;
+  }
+  .profile-tags{display:flex; flex-wrap:wrap; gap:6px;}
+  .tag{background:var(--sage); color:var(--green-deep); font-size:0.78rem; font-weight:600; padding:4px 10px; border-radius:999px;}
+
+  /* ---------- FAQ ACCORDION ---------- */
+  .faq-list{display:flex; flex-direction:column; gap:14px; max-width:800px;}
+  .faq-item{
+    background:var(--white); border-radius:12px; border:1px solid rgba(15,61,46,0.08);
+    overflow:hidden; transition:border-color .2s ease;
+  }
+  .faq-item button{
+    width:100%; text-align:left; padding:18px 22px; background:none; border:none;
+    font-family:inherit; font-size:1.02rem; font-weight:600; color:var(--green-deep);
+    display:flex; justify-content:space-between; align-items:center; cursor:pointer;
+  }
+  [dir="rtl"] .faq-item button{text-align:right;}
+  .faq-answer{padding:0 22px 18px; font-size:0.94rem; color:var(--ink-soft); display:none;}
+  .faq-item.open .faq-answer{display:block;}
+  .faq-item.open button svg{transform:rotate(180deg);}
+  .faq-item button svg{transition:transform .2s ease; width:18px; height:18px; flex-shrink:0;}
+
   /* ---------- process ---------- */
   .process-wrap{
     display:grid; grid-template-columns:repeat(4,1fr); gap:0;
@@ -375,6 +426,11 @@
   }
   .btn-submit:hover{background:var(--green-mid);}
 
+  #form-status{
+    display:none; padding:12px; border-radius:8px; font-size:0.9rem; font-weight:500; margin-top:10px; text-align:center;
+  }
+  #form-status.success{display:block; background:#d4edda; color:#155724; border:1px solid #c3e6cb;}
+
   /* ---------- footer ---------- */
   footer{background:var(--green-deep); color:rgba(255,255,255,0.75); padding:56px 0 26px;}
   .footer-grid{display:grid; grid-template-columns:1.4fr 1fr 1fr 1.1fr; gap:40px;}
@@ -389,6 +445,22 @@
     margin-top:46px; padding-top:22px; border-top:1px solid rgba(255,255,255,0.12);
     display:flex; justify-content:space-between; font-size:0.8rem; flex-wrap:wrap; gap:10px;
   }
+
+  /* ---------- MODAL STYLES ---------- */
+  .modal-overlay{
+    position:fixed; inset:0; background:rgba(15,61,46,0.6); backdrop-filter:blur(4px);
+    z-index:100; display:none; align-items:center; justify-content:center; padding:20px;
+  }
+  .modal-overlay.active{display:flex;}
+  .modal-box{
+    background:var(--white); max-width:600px; width:100%; border-radius:16px; padding:32px;
+    max-height:85vh; overflow-y:auto; position:relative; box-shadow:0 20px 40px rgba(0,0,0,0.2);
+  }
+  .modal-close{
+    position:absolute; top:20px; right:20px; background:none; border:none; font-size:1.5rem;
+    cursor:pointer; color:var(--ink-soft);
+  }
+  [dir="rtl"] .modal-close{right:auto; left:20px;}
 
   /* ---------- floating whatsapp ---------- */
   .fab-whatsapp{
@@ -409,14 +481,15 @@
     .hero-grid, .why-grid, .contact-grid{grid-template-columns:1fr;}
     .hero-visual{order:-1;}
     .trust-grid{grid-template-columns:repeat(3,1fr);}
-    .service-grid, .testi-grid{grid-template-columns:1fr 1fr;}
+    .service-grid, .testi-grid, .profiles-grid{grid-template-columns:1fr 1fr;}
+    .vetting-grid{grid-template-columns:1fr 1fr;}
     .process-wrap{grid-template-columns:1fr 1fr; gap:36px;}
     .process-line{display:none;}
     .footer-grid{grid-template-columns:1fr 1fr;}
   }
   @media (max-width:640px){
-    .trust-grid{grid-template-columns:repeat(2,1fr);}
-    .service-grid, .testi-grid, .why-list, .form-row{grid-template-columns:1fr;}
+    .trust-grid, .vetting-grid{grid-template-columns:repeat(2,1fr);}
+    .service-grid, .testi-grid, .why-list, .form-row, .profiles-grid{grid-template-columns:1fr;}
     .process-wrap{grid-template-columns:1fr;}
     .footer-grid{grid-template-columns:1fr;}
     .float-card{left:8px; bottom:-20px; max-width:200px;}
@@ -441,9 +514,10 @@
 
     <nav class="primary-nav">
       <a href="#services" class="i18n" data-ar="خدماتنا">Services</a>
+      <a href="#profiles" class="i18n" data-ar="المرشحات">Candidates</a>
       <a href="#why" class="i18n" data-ar="لماذا نحن">Why Us</a>
       <a href="#process" class="i18n" data-ar="كيف نعمل">How It Works</a>
-      <a href="#testimonials" class="i18n" data-ar="آراء العملاء">Testimonials</a>
+      <a href="#faq" class="i18n" data-ar="الأسئلة الشائعة">FAQ</a>
       <a href="#contact" class="i18n" data-ar="تواصل معنا">Contact</a>
     </nav>
 
@@ -453,7 +527,6 @@
         <button type="button" id="btn-ar">العربية</button>
       </div>
 
-      <!-- SHARE BUTTON ADDED HERE -->
       <button class="btn-share" id="share-btn" type="button" aria-label="Share Website">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <circle cx="18" cy="5" r="3"></circle>
@@ -465,9 +538,9 @@
         <span class="i18n" data-ar="مشاركة">Share</span>
       </button>
 
-      <a class="btn-whatsapp" href="https://wa.me/966572453774" target="_blank" rel="noopener">
+      <a class="btn-whatsapp wa-dynamic-link" href="https://wa.me/966572453774?text=Hello,%20I%20am%20interested%20in%20hiring%20a%20housemaid/nanny%20in%20Riyadh." target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.28-1.38a9.9 9.9 0 0 0 4.71 1.2h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.87 9.87 0 0 0 12.04 2zm0 18.12h-.01a8.2 8.2 0 0 1-4.18-1.14l-.3-.18-3.13.82.84-3.05-.2-.31a8.2 8.2 0 0 1-1.26-4.36c0-4.53 3.69-8.22 8.24-8.22 2.2 0 4.27.86 5.83 2.42a8.17 8.17 0 0 1 2.41 5.81c0 4.54-3.7 8.23-8.24 8.23zm4.52-6.17c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.13-.17.25-.64.81-.78.97-.14.17-.29.19-.53.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.17.04-.31-.02-.44-.06-.12-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.87.85-.87 2.08s.89 2.41 1.01 2.58c.13.17 1.75 2.67 4.24 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.55.1.47-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.14-1.18-.06-.11-.23-.17-.48-.29z"/></svg>
-        <span class="i18n" data-ar="0572453774">0572 453 774</span>
+        <span>0572 453 774</span>
       </a>
       <button class="nav-toggle" aria-label="Menu">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7h16M4 12h16M4 17h16" stroke-linecap="round"/></svg>
@@ -500,7 +573,7 @@
       </div>
 
       <div class="hero-cta">
-        <a class="btn-primary" href="https://wa.me/966572453774" target="_blank" rel="noopener">
+        <a class="btn-primary wa-dynamic-link" href="https://wa.me/966572453774?text=Hello,%20I%20am%20interested%20in%20hiring%20a%20housemaid/nanny%20in%20Riyadh." target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.28-1.38a9.9 9.9 0 0 0 4.71 1.2h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.87 9.87 0 0 0 12.04 2zm4.52 12.12c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.13-.17.25-.64.81-.78.97-.14.17-.29.19-.53.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.17.04-.31-.02-.44-.06-.12-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.87.85-.87 2.08s.89 2.41 1.01 2.58c.13.17 1.75 2.67 4.24 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.55.1.47-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.14-1.18-.06-.11-.23-.17-.48-.29z"/></svg>
           <span class="i18n" data-ar="تواصل معنا عبر واتساب">Message us on WhatsApp</span>
         </a>
@@ -557,6 +630,35 @@
 <!-- ================= SERVICES ================= -->
 <section class="section" id="services">
   <div class="wrap">
+
+    <!-- IMPROVEMENT 1: Vetting & Safety Standards Badge Box -->
+    <div class="vetting-box">
+      <span class="kicker i18n" data-ar="معايير الأمان والتدقيق">Safety &amp; Verification Standards</span>
+      <h3 style="font-size:1.4rem; margin-top:4px;" class="i18n" data-ar="كيف نضمن سلامة ورضا عائلتكم">How we ensure trust before placement</h3>
+      <div class="vetting-grid">
+        <div class="vetting-card">
+          <span class="badge-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
+          <h4 class="i18n" data-ar="فحص الخلفية الشامل">Identity Verification</h4>
+          <p class="i18n" data-ar="التحقق الكامل من الهوية والأوراق الرسمية والسجل الشخصي.">Full background, identity checks, and official documentation verification.</p>
+        </div>
+        <div class="vetting-card">
+          <span class="badge-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></span>
+          <h4 class="i18n" data-ar="الفحص الطبي الشامل">Medical Clearance</h4>
+          <p class="i18n" data-ar="شهادات لياقة صحية معتمدة وفحوصات خلو من الأمراض.">Comprehensive health screenings and accredited medical fitness clearances.</p>
+        </div>
+        <div class="vetting-card">
+          <span class="badge-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 14l9-5-9-5-9 5 9 5z"/><path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0112 20.055a11.952 11.952 0 01-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/></svg></span>
+          <h4 class="i18n" data-ar="تدريب على الأعمال المنزلية">Household Training</h4>
+          <p class="i18n" data-ar="تدريب عملي على النظافة والعناية بالأطفال والروتين المنزلي في السعودية.">Practical orientation on housekeeping, childcare, and Saudi family routines.</p>
+        </div>
+        <div class="vetting-card">
+          <span class="badge-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><polyline points="17 11 19 13 23 9"/></svg></span>
+          <h4 class="i18n" data-ar="توصيات سابقة موثوقة">Reference Verified</h4>
+          <p class="i18n" data-ar="التواصل مع أصحاب العمل السابقيين للتأكد من الأمانة وحسن السلوك.">Direct reference checks from prior employers confirming work ethic and reliability.</p>
+        </div>
+      </div>
+    </div>
+
     <div class="section-head">
       <span class="kicker i18n" data-ar="خدماتنا">What we offer</span>
       <h2 class="i18n" data-ar="خدمات منزلية مصممة حول عائلتكم">Household support, matched to your family</h2>
@@ -598,8 +700,68 @@
   </div>
 </section>
 
+<!-- ================= IMPROVEMENT 3: SAMPLE CANDIDATE PROFILES ================= -->
+<section class="section on-sage" id="profiles">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kicker i18n" data-ar="نموذج من الكوادر المتاحة">Available Staff Overview</span>
+      <h2 class="i18n" data-ar="نماذج من المرشحات الجاهزات للعمل">Sample Candidate Profiles</h2>
+      <p class="i18n" data-ar="كوادر أوغندية مدربة ومؤهلة بعناية لتلبية متطلبات منازلكم في الرياض.">A preview of carefully selected Ugandan domestic staff ready for placement in Riyadh.</p>
+    </div>
+    <div class="profiles-grid">
+      <div class="profile-card">
+        <div class="profile-header">
+          <div class="profile-avatar">M.N</div>
+          <div>
+            <h3 style="font-size:1.1rem;">Mary N.</h3>
+            <span style="font-size:0.85rem; color:var(--ink-soft);" class="i18n" data-ar="خبرة 4 سنوات">4+ Years Experience</span>
+          </div>
+        </div>
+        <p style="font-size:0.9rem; color:var(--ink-soft);" class="i18n" data-ar="متخصصة في العناية بالأطفال والرضع، وإدارة أعمال النظافة والترتيب اليومي للمنازل الكبيرة.">Specialized in toddler care, infant routines, and general housekeeping for large family homes.</p>
+        <div class="profile-tags">
+          <span class="tag i18n" data-ar="مربية أطفال">Nanny</span>
+          <span class="tag i18n" data-ar="إنجليزية ممتازة">Fluent English</span>
+          <span class="tag i18n" data-ar="رعاية أطفال">Childcare</span>
+        </div>
+      </div>
+
+      <div class="profile-card">
+        <div class="profile-header">
+          <div class="profile-avatar">S.A</div>
+          <div>
+            <h3 style="font-size:1.1rem;">Sarah A.</h3>
+            <span style="font-size:0.85rem; color:var(--ink-soft);" class="i18n" data-ar="خبرة 3 سنوات">3+ Years Experience</span>
+          </div>
+        </div>
+        <p style="font-size:0.9rem; color:var(--ink-soft);" class="i18n" data-ar="خبيرة في التنظيف الشامل، الغسيل، الكوي، وتطبيق معايير النظافة والتنظيم الدقيق.">Expert in deep cleaning, laundry care, ironing, and maintaining meticulous household organization.</p>
+        <div class="profile-tags">
+          <span class="tag i18n" data-ar="عاملة منزلية">Housemaid</span>
+          <span class="tag i18n" data-ar="تنظيف عالي الجودة">Deep Cleaning</span>
+          <span class="tag i18n" data-ar="تنظيم">Organizing</span>
+        </div>
+      </div>
+
+      <div class="profile-card">
+        <div class="profile-header">
+          <div class="profile-avatar">J.K</div>
+          <div>
+            <h3 style="font-size:1.1rem;">Grace K.</h3>
+            <span style="font-size:0.85rem; color:var(--ink-soft);" class="i18n" data-ar="خبرة 5 سنوات">5+ Years Experience</span>
+          </div>
+        </div>
+        <p style="font-size:0.9rem; color:var(--ink-soft);" class="i18n" data-ar="متخصصة في مرافقة ورعاية كبار السن، المساعدة في الطبخ، والاهتمام بوجبات العائلة.">Specialized in eldercare companionship, mobility assistance, and daily family meal preparation.</p>
+        <div class="profile-tags">
+          <span class="tag i18n" data-ar="رعاية كبار السن">Eldercare</span>
+          <span class="tag i18n" data-ar="مساعدة طبخ">Meal Prep</span>
+          <span class="tag i18n" data-ar="صبورة">Patient</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ================= PROCESS ================= -->
-<section class="section on-sage" id="process">
+<section class="section" id="process">
   <div class="wrap">
     <div class="section-head">
       <span class="kicker i18n" data-ar="كيف نعمل">How it works</span>
@@ -711,8 +873,53 @@
   </div>
 </section>
 
+<!-- ================= IMPROVEMENT 2: FAQ ACCORDION SECTION ================= -->
+<section class="section on-sage" id="faq">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kicker i18n" data-ar="الأسئلة الشائعة">Got questions?</span>
+      <h2 class="i18n" data-ar="إجابات على استفساراتكم الشائعة">Frequently Asked Questions</h2>
+      <p class="i18n" data-ar="كل ما تحتاج لمعرفته حول عملية الاستقدام والتكيّف مع عائلتك.">Everything you need to know about candidate selection, matching, and service terms.</p>
+    </div>
+
+    <div class="faq-list">
+      <div class="faq-item">
+        <button type="button">
+          <span class="i18n" data-ar="كم تستغرق عملية اختيار وترشيح الموظفة؟">How long does the matching process take?</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-answer i18n" data-ar="عادةً ما يتم تقديم مرشحات مناسبات خلال 24 إلى 48 ساعة من تاريخ تواصلكم معنا وتحديد متطلبات منزلكم.">Typically, we provide shortlisted candidate profiles within 24 to 48 hours after understanding your specific household requirements.</div>
+      </div>
+
+      <div class="faq-item">
+        <button type="button">
+          <span class="i18n" data-ar="ماذا يحدث إذا لم تكن الموظفة مناسبة لعائلتنا؟">What happens if the staff member is not a good fit?</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-answer i18n" data-ar="نقدم ضمان استبدال سلس، حيث يمكنك طلب ترشيح شخص آخر إذا تبين أن التوافق غير مناسب في الأسابيع الأولى.">We offer a free re-matching procedure during the initial trial period to ensure your family's absolute comfort and satisfaction.</div>
+      </div>
+
+      <div class="faq-item">
+        <button type="button">
+          <span class="i18n" data-ar="هل يتحدث الكادر الأوغندي اللغة الإنجليزية أو العربية؟">Do candidates speak English or Arabic?</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-answer i18n" data-ar="جميع مرشحاتنا يتقنّ الإنجليزية بطلاقة، مع وجود خلفية واستيعاب للكلمات العربية الأساسية اليومية.">All candidates speak fluent English, and many have developed working understanding of basic daily household Arabic words.</div>
+      </div>
+
+      <div class="faq-item">
+        <button type="button">
+          <span class="i18n" data-ar="هل الخيارات المتاحة للدوام الكلي أم الجزئي؟">Are full-time or part-time options available?</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></span>
+        </button>
+        <div class="faq-answer i18n" data-ar="نوفر ترتيبات إقامة كاملة أو دوام جزئي حسب متطلبات العائلة ونظام العمل المفضل لديكم.">We support both full-time live-in arrangements as well as flexible schedules according to your household structure.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ================= CONTACT ================= -->
-<section class="section on-sage" id="contact">
+<section class="section" id="contact">
   <div class="wrap contact-grid">
     <div>
       <div class="section-head" style="margin-bottom:32px;">
@@ -740,10 +947,11 @@
       </div>
     </div>
 
+    <!-- IMPROVEMENT 6: Enhanced Interactive Form Feedback -->
     <div class="contact-card form-card">
       <h3 class="i18n" data-ar="اطلبوا موظفة الآن">Request staff</h3>
       <p class="sub i18n" data-ar="سنعاود التواصل معكم خلال ساعات قليلة.">We'll get back to you within a few hours.</p>
-      <form action="https://formspree.io/f/xyezzgea" method="POST">
+      <form id="request-form" action="https://formspree.io/f/xyezzgea" method="POST">
         <div class="form-row">
           <div class="field">
             <label class="i18n" data-ar="الاسم">Name</label>
@@ -767,7 +975,8 @@
           <label class="i18n" data-ar="تفاصيل إضافية">Additional details</label>
           <textarea name="message" class="i18n-ph" data-ar-ph="أدخل أي تفاصيل إضافية هنا..." placeholder="Provide any additional household preferences or working hours..."></textarea>
         </div>
-        <button type="submit" class="btn-submit i18n" data-ar="إرسال الطلب">Send request</button>
+        <button type="submit" class="btn-submit i18n" id="btn-form-submit" data-ar="إرسال الطلب">Send request</button>
+        <div id="form-status"></div>
       </form>
     </div>
   </div>
@@ -788,6 +997,7 @@
       <h4 class="i18n" data-ar="روابط سريعة">Quick links</h4>
       <ul>
         <li><a href="#services" class="i18n" data-ar="خدماتنا">Services</a></li>
+        <li><a href="#profiles" class="i18n" data-ar="المرشحات">Candidates</a></li>
         <li><a href="#why" class="i18n" data-ar="لماذا نحن">Why Us</a></li>
         <li><a href="#process" class="i18n" data-ar="كيف نعمل">How It Works</a></li>
         <li><a href="#contact" class="i18n" data-ar="تواصل معنا">Contact</a></li>
@@ -803,10 +1013,12 @@
       </ul>
     </div>
     <div>
-      <h4 class="i18n" data-ar="تواصل معنا">Contact</h4>
+      <!-- IMPROVEMENT 5: Legal Policy Footer Links -->
+      <h4 class="i18n" data-ar="السياسات والخصوصية">Legal &amp; Policy</h4>
       <ul>
+        <li><a href="#" id="link-privacy" class="i18n" data-ar="سياسة الخصوصية">Privacy Policy</a></li>
+        <li><a href="#" id="link-terms" class="i18n" data-ar="شروط الخدمة">Terms of Service</a></li>
         <li>0572 453 774</li>
-        <li><a href="mailto:ssagalabayombai@gmail.com">ssagalabayombai@gmail.com</a></li>
         <li class="i18n" data-ar="الرياض، المملكة العربية السعودية">Riyadh, Saudi Arabia</li>
       </ul>
     </div>
@@ -817,7 +1029,17 @@
   </div>
 </footer>
 
-<a class="fab-whatsapp" href="https://wa.me/966572453774" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+<!-- IMPROVEMENT 5 (Modal Overlay for Privacy & Terms) -->
+<div class="modal-overlay" id="legal-modal">
+  <div class="modal-box">
+    <button class="modal-close" id="modal-close-btn">&times;</button>
+    <h3 id="modal-title" style="margin-bottom:12px;"></h3>
+    <div id="modal-body" style="font-size:0.92rem; color:var(--ink-soft); line-height:1.6;"></div>
+  </div>
+</div>
+
+<!-- IMPROVEMENT 4: Pre-filled WhatsApp Button -->
+<a class="fab-whatsapp wa-dynamic-link" href="https://wa.me/966572453774?text=Hello,%20I%20am%20interested%20in%20hiring%20a%20housemaid/nanny%20in%20Riyadh." target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
   <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.28-1.38a9.9 9.9 0 0 0 4.71 1.2h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.87 9.87 0 0 0 12.04 2zm4.52 12.12c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.13-.17.25-.64.81-.78.97-.14.17-.29.19-.53.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.17.04-.31-.02-.44-.06-.12-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.87.85-.87 2.08s.89 2.41 1.01 2.58c.13.17 1.75 2.67 4.24 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.55.1.47-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.14-1.18-.06-.11-.23-.17-.48-.29z"/></svg>
 </a>
 
@@ -831,6 +1053,17 @@
 
     var btnEn = document.getElementById('btn-en');
     var btnAr = document.getElementById('btn-ar');
+
+    /* IMPROVEMENT 4: Dynamic WhatsApp Pre-filled Links based on active language */
+    function updateWhatsAppLinks(lang) {
+      var waLinks = document.querySelectorAll('.wa-dynamic-link');
+      var msg = lang === 'ar' 
+        ? 'مرحبا،%20أنا%20مهتم%20باستقدام%20عاملة%20منزلية/مربية%20في%20الرياض.' 
+        : 'Hello,%20I%20am%20interested%20in%20hiring%20a%20housemaid/nanny%20in%20Riyadh.';
+      waLinks.forEach(function(a){
+        a.href = 'https://wa.me/966572453774?text=' + msg;
+      });
+    }
 
     function setLang(lang){
       var html = document.documentElement;
@@ -852,12 +1085,12 @@
         btnAr.classList.remove('active');
       }
       localStorage.setItem('shakirah_lang', lang);
+      updateWhatsAppLinks(lang);
     }
 
     btnEn.addEventListener('click', function(){ setLang('en'); });
     btnAr.addEventListener('click', function(){ setLang('ar'); });
 
-    // Restore saved language preference on load
     var savedLang = localStorage.getItem('shakirah_lang');
     if(savedLang === 'ar'){ setLang('ar'); }
 
@@ -872,7 +1105,7 @@
       primaryNav.style.padding = open ? '0' : '14px 0 4px';
     });
 
-    // SHARE BUTTON LOGIC ADDED HERE
+    /* Share Button Logic */
     var shareBtn = document.getElementById('share-btn');
     if (shareBtn) {
       shareBtn.addEventListener('click', function() {
@@ -885,9 +1118,7 @@
             title: shareTitle,
             text: shareText,
             url: window.location.href
-          }).catch(function(err) {
-            console.log('Share dismissed:', err);
-          });
+          }).catch(function(err){});
         } else {
           navigator.clipboard.writeText(window.location.href).then(function() {
             alert(currentLang === 'ar' ? 'تم نسخ الرابط إلى الحافظة!' : 'Link copied to clipboard!');
@@ -897,6 +1128,75 @@
         }
       });
     }
+
+    /* IMPROVEMENT 2: FAQ Accordion Toggle */
+    var faqButtons = document.querySelectorAll('.faq-item button');
+    faqButtons.forEach(function(btn){
+      btn.addEventListener('click', function(){
+        var item = this.parentElement;
+        item.classList.toggle('open');
+      });
+    });
+
+    /* IMPROVEMENT 5: Legal Modal Logic */
+    var modal = document.getElementById('legal-modal');
+    var modalTitle = document.getElementById('modal-title');
+    var modalBody = document.getElementById('modal-body');
+    var modalClose = document.getElementById('modal-close-btn');
+
+    document.getElementById('link-privacy').addEventListener('click', function(e){
+      e.preventDefault();
+      var lang = localStorage.getItem('shakirah_lang') || 'en';
+      modalTitle.innerText = lang === 'ar' ? 'سياسة الخصوصية' : 'Privacy Policy';
+      modalBody.innerHTML = lang === 'ar' 
+        ? '<p>نحن نحترم خصوصيتكم ونلتزم بحماية بياناتكم الشخصية. يتم استخدام أي معلومات تشاركونها معنا عبر هذا الموقع حصرياً بغرض التواصل وإتمام تقديم خدمات العمالة المنزلية المناسبة. لا نقوم ببيع أو مشاركة بياناتكم مع أي أطراف خارجية غير معنية.</p>'
+        : '<p>We value your privacy and are committed to protecting your personal information. All data submitted through this website is used strictly for response and match-making purposes regarding domestic staffing in Riyadh. We do not sell or share your personal details with third parties.</p>';
+      modal.classList.add('active');
+    });
+
+    document.getElementById('link-terms').addEventListener('click', function(e){
+      e.preventDefault();
+      var lang = localStorage.getItem('shakirah_lang') || 'en';
+      modalTitle.innerText = lang === 'ar' ? 'شروط الخدمة' : 'Terms of Service';
+      modalBody.innerHTML = lang === 'ar' 
+        ? '<p>جميع الخدمات والترشيحات المقدمة خاضعة للتنسيق والتأكيد المباشر بين العائلة والإدارة. نلتزم بالمتابعة وتقديم البديل المناسب حسب شروط الاتفاق لضمان التوافق التام ورضا العملاء.</p>'
+        : '<p>All candidate shortlists and placements are finalized upon direct communication and mutual agreement. We offer candidate re-matching guarantees within the initial period to ensure high quality and customer satisfaction.</p>';
+      modal.classList.add('active');
+    });
+
+    modalClose.addEventListener('click', function(){ modal.classList.remove('active'); });
+    modal.addEventListener('click', function(e){ if(e.target === modal) modal.classList.remove('active'); });
+
+    /* IMPROVEMENT 6: Interactive Form Submission Handling */
+    var form = document.getElementById('request-form');
+    var status = document.getElementById('form-status');
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      var btn = document.getElementById('btn-form-submit');
+      var lang = localStorage.getItem('shakirah_lang') || 'en';
+      btn.disabled = true;
+      btn.innerText = lang === 'ar' ? 'جاري الإرسال...' : 'Sending...';
+
+      fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      }).then(function(res){
+        if (res.ok) {
+          status.className = 'success';
+          status.innerText = lang === 'ar' ? 'تم إرسال طلبكم بنجاح! سنتاصل معكم قريباً.' : 'Request sent successfully! We will contact you shortly.';
+          form.reset();
+        } else {
+          alert(lang === 'ar' ? 'حدث خطأ أثناء الإرسال. يرجى المحاولة لاحقاً.' : 'There was an issue submitting your form. Please try again.');
+        }
+      }).catch(function(){
+        alert(lang === 'ar' ? 'تعذر الاتصال بالخادم.' : 'Unable to connect to server.');
+      }).finally(function(){
+        btn.disabled = false;
+        btn.innerText = lang === 'ar' ? 'إرسال الطلب' : 'Send request';
+      });
+    });
+
   })();
 </script>
 
