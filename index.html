@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -9,31 +9,28 @@
 <link rel="manifest" href="/site.webmanifest">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>شكيرة — خادمات ومربيات في الرياض | خدمات التوظيف المنزلي</title>
+<title>Shakirah — Housemaids &amp; Nannies in Riyadh | Domestic Staffing Services</title>
 
 <!-- SEO & Search Engine Indexing Meta Tags -->
 <meta name="robots" content="index, follow">
-<meta name="description" content="خادمات ومربيات أفريقيات موثوقات وموهوبات لخدمة المنازل في الرياض، المملكة العربية السعودية. تم فحصهن وتدريبهن بعناية لراحة بيتكم. تواصلوا معنا اليوم.">
-<meta name="keywords" content="خادمات الرياض, مربيات الرياض, عاملات منزليات السعودية, رعاية مسنين الرياض, شكيرة توظيف منزلي, housemaids Riyadh, nannies Riyadh">
+<meta name="description" content="Trusted African housemaids and nannies serving families across Riyadh, Saudi Arabia. Carefully vetted, background-checked, and matched to your home. Contact us today.">
+<meta name="keywords" content="housemaids Riyadh, nannies Riyadh, African domestic workers Saudi Arabia, elderly care Riyadh, Shakirah domestic staffing">
 <link rel="canonical" href="https://shakiramaidsriyadh.com/">
 
 <!-- Open Graph / Social Media Sharing -->
-<meta property="og:title" content="شكيرة — خادمات ومربيات في الرياض">
-<meta property="og:description" content="خادمات ومربيات أفريقيات موثوقات لخدمة المنازل في الرياض، المملكة العربية السعودية.">
+<meta property="og:title" content="Shakirah — Housemaids &amp; Nannies in Riyadh">
+<meta property="og:description" content="Trusted African housemaids and nannies serving families across Riyadh, Saudi Arabia.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Shakirah">
 <meta property="og:url" content="https://shakiramaidsriyadh.com/">
-<meta property="og:locale" content="ar_SA">
-<meta property="og:locale:alternate" content="en_US">
 
 <!-- Site name for Google Search results -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  "name": "شكيرة",
-  "alternateName": ["Shakirah", "Shakirah Maids Riyadh"],
-  "inLanguage": "ar",
+  "name": "Shakirah",
+  "alternateName": "Shakirah Maids Riyadh",
   "url": "https://shakiramaidsriyadh.com/"
 }
 </script>
@@ -600,7 +597,7 @@
 
     <div class="hero-visual">
       <div class="frame">
-        <img src="images/hero-cleaning.jpg" alt="خادمات شكيرة تنظفان صالة معيشة فاخرة في الرياض">
+        <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=80&w=900&auto=format&fit=crop" alt="Housemaid mopping a bright living room with the Riyadh skyline in the background">
       </div>
       <div class="ring" aria-hidden="true"></div>
       <div class="float-card">
@@ -1108,8 +1105,8 @@
     btnEn.addEventListener('click', function(){ setLang('en'); });
     btnAr.addEventListener('click', function(){ setLang('ar'); });
 
-    var savedLang = localStorage.getItem('shakirah_lang') || 'ar';
-    setLang(savedLang);
+    var savedLang = localStorage.getItem('shakirah_lang');
+    if(savedLang === 'ar'){ setLang('ar'); }
 
     var navToggle = document.querySelector('.nav-toggle');
     var primaryNav = document.querySelector('.primary-nav');
