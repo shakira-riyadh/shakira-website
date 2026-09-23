@@ -608,7 +608,7 @@
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.28-1.38a9.9 9.9 0 0 0 4.71 1.2h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.87 9.87 0 0 0 12.04 2zm4.52 12.12c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.13-.17.25-.64.81-.78.97-.14.17-.29.19-.53.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.17.04-.31-.02-.44-.06-.12-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.87.85-.87 2.08s.89 2.41 1.01 2.58c.13.17 1.75 2.67 4.24 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.55.1.47-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.14-1.18-.06-.11-.23-.17-.48-.29z"/></svg>
           <span class="i18n" data-ar="تواصل معنا عبر واتساب">Message us on WhatsApp</span>
         </a>
-        <span class="call-note i18n" data-ar="أو اتصلوا مباشرة <strong>0572 453 774</strong>">or call <strong>0572 453 774</strong></span>
+        <span class="call-note"><span class="i18n" data-ar="أو اتصلوا مباشرة">or call</span> <strong>0572 453 774</strong></span>
       </div>
     </div>
 
@@ -692,7 +692,7 @@
     <div class="section-head">
       <span class="kicker i18n" data-ar="خدماتنا">What we offer</span>
       <h2 class="i18n" data-ar="خدمات منزلية مصممة حول عائلتكم">Household support, matched to your family</h2>
-      <p class="i18n" data-ar="من التنظيف اليومي إلى رعاية الأطفال وكبار السن، نوفر لكم الموظفة المناسبة تماماً لاحتياجات منزلكم.">From daily cleaning to childcare and eldercare, we match you with staff suited to exactly how your household runs — not a generic placement.</p>
+      <p class="i18n" data-ar="من التنظيف اليومي إلى رعاية الأطفال وكبار السن، نوفر لكم الموظفة المناسبة تماماً لااحتياجات منزلكم.">From daily cleaning to childcare and eldercare, we match you with staff suited to exactly how your household runs — not a generic placement.</p>
     </div>
 
     <div class="service-grid">
@@ -1116,10 +1116,14 @@
 <script>
   (function(){
     var nodes = document.querySelectorAll('.i18n');
-    nodes.forEach(function(n){ n.dataset.en = n.innerHTML; });
+    nodes.forEach(function(n){ 
+      n.dataset.en = n.innerHTML.trim(); 
+    });
 
     var phNodes = document.querySelectorAll('.i18n-ph');
-    phNodes.forEach(function(n){ n.dataset.enPh = n.getAttribute('placeholder'); });
+    phNodes.forEach(function(n){ 
+      n.dataset.enPh = n.getAttribute('placeholder'); 
+    });
 
     var btnEn = document.getElementById('btn-en');
     var btnAr = document.getElementById('btn-ar');
@@ -1137,11 +1141,21 @@
     function setLang(lang){
       var html = document.documentElement;
       nodes.forEach(function(n){
-        n.innerHTML = lang === 'ar' ? n.dataset.ar : n.dataset.en;
+        if (lang === 'ar') {
+          if (n.dataset.ar) {
+            n.innerHTML = n.dataset.ar;
+          }
+        } else {
+          if (n.dataset.en) {
+            n.innerHTML = n.dataset.en;
+          }
+        }
       });
+
       phNodes.forEach(function(n){
         n.setAttribute('placeholder', lang === 'ar' ? n.dataset.arPh : n.dataset.enPh);
       });
+
       if(lang === 'ar'){
         html.setAttribute('lang','ar');
         html.setAttribute('dir','rtl');
@@ -1161,20 +1175,23 @@
     btnAr.addEventListener('click', function(){ setLang('ar'); });
 
     var savedLang = localStorage.getItem('shakirah_lang');
-    if(savedLang === 'ar'){ setLang('ar'); }
+    if(savedLang === 'ar'){ 
+      setLang('ar'); 
+    }
 
     var navToggle = document.querySelector('.nav-toggle');
     var primaryNav = document.querySelector('.primary-nav');
-    navToggle.addEventListener('click', function(){
-      var open = primaryNav.style.display === 'flex';
-      primaryNav.style.display = open ? 'none' : 'flex';
-      primaryNav.style.flexDirection = 'column';
-      primaryNav.style.gap = '14px';
-      primaryNav.style.width = '100%';
-      primaryNav.style.padding = open ? '0' : '14px 0 4px';
-    });
+    if (navToggle && primaryNav) {
+      navToggle.addEventListener('click', function(){
+        var open = primaryNav.style.display === 'flex';
+        primaryNav.style.display = open ? 'none' : 'flex';
+        primaryNav.style.flexDirection = 'column';
+        primaryNav.style.gap = '14px';
+        primaryNav.style.width = '100%';
+        primaryNav.style.padding = open ? '0' : '14px 0 4px';
+      });
+    }
 
-    /* Share Button Logic */
     var shareBtn = document.getElementById('share-btn');
     if (shareBtn) {
       shareBtn.addEventListener('click', function() {
@@ -1198,7 +1215,6 @@
       });
     }
 
-    /* FAQ Accordion Toggle */
     var faqButtons = document.querySelectorAll('.faq-item button');
     faqButtons.forEach(function(btn){
       btn.addEventListener('click', function(){
@@ -1207,64 +1223,72 @@
       });
     });
 
-    /* Legal Modal Logic */
     var modal = document.getElementById('legal-modal');
     var modalTitle = document.getElementById('modal-title');
     var modalBody = document.getElementById('modal-body');
     var modalClose = document.getElementById('modal-close-btn');
 
-    document.getElementById('link-privacy').addEventListener('click', function(e){
-      e.preventDefault();
-      var lang = localStorage.getItem('shakirah_lang') || 'en';
-      modalTitle.innerText = lang === 'ar' ? 'سياسة الخصوصية' : 'Privacy Policy';
-      modalBody.innerHTML = lang === 'ar' 
-        ? '<p>نحن نحترم خصوصيتكم ونلتزم بحماية بياناتكم الشخصية. يتم استخدام أي معلومات تشاركونها معنا عبر هذا الموقع حصرياً بغرض التواصل وإتمام تقديم خدمات العمالة المنزلية المناسبة. لا نقوم ببيع أو مشاركة بياناتكم مع أي أطراف خارجية غير معنية.</p>'
-        : '<p>We value your privacy and are committed to protecting your personal information. All data submitted through this website is used strictly for response and match-making purposes regarding domestic staffing in Riyadh. We do not sell or share your personal details with third parties.</p>';
-      modal.classList.add('active');
-    });
+    if (document.getElementById('link-privacy')) {
+      document.getElementById('link-privacy').addEventListener('click', function(e){
+        e.preventDefault();
+        var lang = localStorage.getItem('shakirah_lang') || 'en';
+        modalTitle.innerText = lang === 'ar' ? 'سياسة الخصوصية' : 'Privacy Policy';
+        modalBody.innerHTML = lang === 'ar' 
+          ? '<p>نحن نحترم خصوصيتكم ونلتزم بحماية بياناتكم الشخصية. يتم استخدام أي معلومات تشاركونها معنا عبر هذا الموقع حصرياً بغرض التواصل وإتمام تقديم خدمات العمالة المنزلية المناسبة. لا نقوم ببيع أو مشاركة بياناتكم مع أي أطراف خارجية غير معنية.</p>'
+          : '<p>We value your privacy and are committed to protecting your personal information. All data submitted through this website is used strictly for response and match-making purposes regarding domestic staffing in Riyadh. We do not sell or share your personal details with third parties.</p>';
+        modal.classList.add('active');
+      });
+    }
 
-    document.getElementById('link-terms').addEventListener('click', function(e){
-      e.preventDefault();
-      var lang = localStorage.getItem('shakirah_lang') || 'en';
-      modalTitle.innerText = lang === 'ar' ? 'شروط الخدمة' : 'Terms of Service';
-      modalBody.innerHTML = lang === 'ar' 
-        ? '<p>جميع الخدمات والترشيحات المقدمة خاضعة للتنسيق والتأكيد المباشر بين العائلة والإدارة. نلتزم بالمتابعة وتقديم البديل المناسب حسب شروط الاتفاق لضمان التوافق التام ورضا العملاء.</p>'
-        : '<p>All candidate shortlists and placements are finalized upon direct communication and mutual agreement. We offer candidate re-matching guarantees within the initial period to ensure high quality and customer satisfaction.</p>';
-      modal.classList.add('active');
-    });
+    if (document.getElementById('link-terms')) {
+      document.getElementById('link-terms').addEventListener('click', function(e){
+        e.preventDefault();
+        var lang = localStorage.getItem('shakirah_lang') || 'en';
+        modalTitle.innerText = lang === 'ar' ? 'شروط الخدمة' : 'Terms of Service';
+        modalBody.innerHTML = lang === 'ar' 
+          ? '<p>جميع الخدمات والترشيحات المقدمة خاضعة للتنسيق والتأكيد المباشر بين العائلة والإدارة. نلتزم بالمتابعة وتقديم البديل المناسب حسب شروط الاتفاق لضمان التوافق التام ورضا العملاء.</p>'
+          : '<p>All candidate shortlists and placements are finalized upon direct communication and mutual agreement. We offer candidate re-matching guarantees within the initial period to ensure high quality and customer satisfaction.</p>';
+        modal.classList.add('active');
+      });
+    }
 
-    modalClose.addEventListener('click', function(){ modal.classList.remove('active'); });
-    modal.addEventListener('click', function(e){ if(e.target === modal) modal.classList.remove('active'); });
+    if (modalClose) {
+      modalClose.addEventListener('click', function(){ modal.classList.remove('active'); });
+    }
+    if (modal) {
+      modal.addEventListener('click', function(e){ if(e.target === modal) modal.classList.remove('active'); });
+    }
 
-    /* Interactive Form Submission Handling */
     var form = document.getElementById('request-form');
     var status = document.getElementById('form-status');
-    form.addEventListener('submit', function(e){
-      e.preventDefault();
-      var btn = document.getElementById('btn-form-submit');
-      var lang = localStorage.getItem('shakirah_lang') || 'en';
-      btn.disabled = true;
-      btn.innerText = lang === 'ar' ? 'جاري الإرسال...' : 'Sending...';
+    if (form) {
+      form.addEventListener('submit', function(e){
+        e.preventDefault();
+        var btn = document.getElementById('btn-form-submit');
+        var lang = localStorage.getItem('shakirah_lang') || 'en';
+        btn.disabled = true;
+        btn.innerText = lang === 'ar' ? 'جاري الإرسال...' : 'Sending...';
 
-      fetch(form.action, {
-        method: 'POST',
-        body: new FormData(form),
-        headers: { 'Accept': 'application/json' }
-      }).then(function(res){
-        if (res.ok) {
-          status.className = 'success';
-          status.innerText = lang === 'ar' ? 'تم إرسال طلبكم بنجاح! سنتاصل معكم قريباً.' : 'Request sent successfully! We will contact you shortly.';
-          form.reset();
-        } else {
-          alert(lang === 'ar' ? 'حدث خطأ أثناء الإرسال. يرجى المحاولة لاحقاً.' : 'There was an issue submitting your form. Please try again.');
-        }
-      }).catch(function(){
-        alert(lang === 'ar' ? 'تعذر الاتصال بالخادم.' : 'Unable to connect to server.');
-      }).finally(function(){
-        btn.disabled = false;
-        btn.innerText = lang === 'ar' ? 'إرسال الطلب' : 'Send request';
+        fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        }).then(function(res){
+          if (res.ok) {
+            status.className = 'success';
+            status.innerText = lang === 'ar' ? 'تم إرسال طلبكم بنجاح! سنتاصل معكم قريباً.' : 'Request sent successfully! We will contact you shortly.';
+            form.reset();
+          } else {
+            alert(lang === 'ar' ? 'حدث خطأ أثناء الإرسال. يرجى المحاولة لاحقاً.' : 'There was an issue submitting your form. Please try again.');
+          }
+        }).catch(function(){
+          alert(lang === 'ar' ? 'تعذر الاتصال بالخادم.' : 'Unable to connect to server.');
+        }).finally(function(){
+          btn.disabled = false;
+          btn.innerText = lang === 'ar' ? 'إرسال الطلب' : 'Send request';
+        });
       });
-    });
+    }
 
   })();
 </script>
