@@ -309,15 +309,31 @@
   }
   .profile-card{
     background:var(--white); border-radius:2px 24px 2px 24px; border:1px solid rgba(15,61,46,0.08);
-    padding:28px; display:flex; flex-direction:column; justify-space-between; gap:16px;
+    padding:28px; display:flex; flex-direction:column; justify-content:space-between; gap:16px;
   }
   .profile-header{display:flex; align-items:center; gap:14px;}
   .profile-avatar{
-    width:50px; height:50px; border-radius:50%; background:var(--green-deep); color:var(--gold-soft);
-    display:flex; align-items:center; justify-content:center; font-family:"Fraunces",serif; font-weight:600; font-size:1.1rem;
+    width:56px; height:56px; border-radius:50%; overflow:hidden; border:2px solid var(--gold);
+    flex-shrink:0; background:var(--green-deep);
   }
+  .profile-avatar img{width:100%; height:100%; object-fit:cover;}
   .profile-tags{display:flex; flex-wrap:wrap; gap:6px;}
   .tag{background:var(--sage); color:var(--green-deep); font-size:0.78rem; font-weight:600; padding:4px 10px; border-radius:999px;}
+
+  /* ---------- PHOTO GALLERY SECTION ---------- */
+  .gallery-grid{
+    display:grid; grid-template-columns:repeat(4,1fr); gap:20px;
+  }
+  .gallery-card{
+    background:var(--white); border-radius:16px; overflow:hidden;
+    border:1px solid rgba(15,61,46,0.08); box-shadow:0 10px 24px -8px rgba(15,61,46,0.08);
+    transition:transform .25s ease, box-shadow .25s ease;
+  }
+  .gallery-card:hover{transform:translateY(-4px); box-shadow:0 16px 36px -10px rgba(15,61,46,0.18);}
+  .gallery-img{aspect-ratio:4/3; width:100%; overflow:hidden;}
+  .gallery-img img{width:100%; height:100%; object-fit:cover; transition:transform .3s ease;}
+  .gallery-card:hover .gallery-img img{transform:scale(1.05);}
+  .gallery-caption{padding:14px 16px; font-weight:600; font-size:0.9rem; color:var(--green-deep); text-align:center;}
 
   /* ---------- FAQ ACCORDION ---------- */
   .faq-list{display:flex; flex-direction:column; gap:14px; max-width:800px;}
@@ -495,7 +511,7 @@
     .hero-grid, .why-grid, .contact-grid{grid-template-columns:1fr;}
     .hero-visual{order:-1;}
     .trust-grid{grid-template-columns:repeat(3,1fr);}
-    .service-grid, .testi-grid, .profiles-grid{grid-template-columns:1fr 1fr;}
+    .service-grid, .testi-grid, .profiles-grid, .gallery-grid{grid-template-columns:1fr 1fr;}
     .vetting-grid{grid-template-columns:1fr 1fr;}
     .process-wrap{grid-template-columns:1fr 1fr; gap:36px;}
     .process-line{display:none;}
@@ -503,7 +519,7 @@
   }
   @media (max-width:640px){
     .trust-grid, .vetting-grid{grid-template-columns:repeat(2,1fr);}
-    .service-grid, .testi-grid, .why-list, .form-row, .profiles-grid{grid-template-columns:1fr;}
+    .service-grid, .testi-grid, .why-list, .form-row, .profiles-grid, .gallery-grid{grid-template-columns:1fr;}
     .process-wrap{grid-template-columns:1fr;}
     .footer-grid{grid-template-columns:1fr;}
     .float-card{left:8px; bottom:-20px; max-width:200px;}
@@ -529,6 +545,7 @@
     <nav class="primary-nav">
       <a href="#services" class="i18n" data-ar="خدماتنا">Services</a>
       <a href="#profiles" class="i18n" data-ar="المرشحات">Candidates</a>
+      <a href="#gallery" class="i18n" data-ar="معرض الصور">Gallery</a>
       <a href="#why" class="i18n" data-ar="لماذا نحن">Why Us</a>
       <a href="#process" class="i18n" data-ar="كيف نعمل">How It Works</a>
       <a href="#faq" class="i18n" data-ar="الأسئلة الشائعة">FAQ</a>
@@ -597,7 +614,7 @@
 
     <div class="hero-visual">
       <div class="frame">
-        <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=80&w=900&auto=format&fit=crop" alt="Housemaid mopping a bright living room with the Riyadh skyline in the background">
+        <img src="https://cdn.phototourl.com/member/2026-09-23-1bf130b0-8336-4bdd-8668-a3f3d19dc0c7.jpg" alt="Professional Shakirah Staff Member in Riyadh">
       </div>
       <div class="ring" aria-hidden="true"></div>
       <div class="float-card">
@@ -645,7 +662,6 @@
 <section class="section" id="services">
   <div class="wrap">
 
-    <!-- IMPROVEMENT 1: Vetting & Safety Standards Badge Box -->
     <div class="vetting-box">
       <span class="kicker i18n" data-ar="معايير الأمان والتدقيق">Safety &amp; Verification Standards</span>
       <h3 style="font-size:1.4rem; margin-top:4px;" class="i18n" data-ar="كيف نضمن سلامة ورضا عائلتكم">How we ensure trust before placement</h3>
@@ -714,7 +730,7 @@
   </div>
 </section>
 
-<!-- ================= IMPROVEMENT 3: SAMPLE CANDIDATE PROFILES ================= -->
+<!-- ================= SAMPLE CANDIDATE PROFILES ================= -->
 <section class="section on-sage" id="profiles">
   <div class="wrap">
     <div class="section-head">
@@ -725,7 +741,9 @@
     <div class="profiles-grid">
       <div class="profile-card">
         <div class="profile-header">
-          <div class="profile-avatar">M.N</div>
+          <div class="profile-avatar">
+            <img src="https://cdn.phototourl.com/member/2026-09-23-9f23a597-103f-4b4c-92ea-92f63fc6ca82.jpg" alt="Mary N. Profile">
+          </div>
           <div>
             <h3 style="font-size:1.1rem;">Mary N.</h3>
             <span style="font-size:0.85rem; color:var(--ink-soft);" class="i18n" data-ar="خبرة 4 سنوات">4+ Years Experience</span>
@@ -741,7 +759,9 @@
 
       <div class="profile-card">
         <div class="profile-header">
-          <div class="profile-avatar">S.A</div>
+          <div class="profile-avatar">
+            <img src="https://cdn.phototourl.com/member/2026-09-23-514463b6-d514-4eea-98de-990f34767c93.jpg" alt="Sarah A. Profile">
+          </div>
           <div>
             <h3 style="font-size:1.1rem;">Sarah A.</h3>
             <span style="font-size:0.85rem; color:var(--ink-soft);" class="i18n" data-ar="خبرة 3 سنوات">3+ Years Experience</span>
@@ -757,7 +777,9 @@
 
       <div class="profile-card">
         <div class="profile-header">
-          <div class="profile-avatar">J.K</div>
+          <div class="profile-avatar">
+            <img src="https://cdn.phototourl.com/member/2026-09-23-fdfa9a49-f801-446d-a810-bdc79c084a38.jpg" alt="Grace K. Profile">
+          </div>
           <div>
             <h3 style="font-size:1.1rem;">Grace K.</h3>
             <span style="font-size:0.85rem; color:var(--ink-soft);" class="i18n" data-ar="خبرة 5 سنوات">5+ Years Experience</span>
@@ -774,8 +796,45 @@
   </div>
 </section>
 
+<!-- ================= PHOTO GALLERY ================= -->
+<section class="section" id="gallery">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kicker i18n" data-ar="معرض الصور">Our Staff &amp; Services</span>
+      <h2 class="i18n" data-ar="صور من الواقع والعمل الميداني">Dedicated to Excellence in Riyadh</h2>
+      <p class="i18n" data-ar="جانب من الكوادر والمهارات المقدمة لعائلتكم.">A glimpse of our professional staff, training, and everyday domestic support.</p>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-card">
+        <div class="gallery-img">
+          <img src="https://cdn.phototourl.com/member/2026-09-23-70daad28-2b63-40aa-aac6-5e4cdbf53392.jpg" alt="Housekeeping Professional">
+        </div>
+        <div class="gallery-caption i18n" data-ar="عناية وتنظيف متكامل">Meticulous Housekeeping</div>
+      </div>
+      <div class="gallery-card">
+        <div class="gallery-img">
+          <img src="https://cdn.phototourl.com/member/2026-09-23-8a41b691-1156-44c4-8ad5-eed1ac896648.jpg" alt="Childcare Specialist">
+        </div>
+        <div class="gallery-caption i18n" data-ar="رعاية أطفال متميزة">Dedicated Childcare</div>
+      </div>
+      <div class="gallery-card">
+        <div class="gallery-img">
+          <img src="https://cdn.phototourl.com/member/2026-09-23-3e2787f9-31c3-48f6-9529-d7422c809537.png" alt="Trusted Domestic Helper">
+        </div>
+        <div class="gallery-caption i18n" data-ar="كوادر موثوقة ومفحوصة">Vetted &amp; Trusted Staff</div>
+      </div>
+      <div class="gallery-card">
+        <div class="gallery-img">
+          <img src="https://cdn.phototourl.com/member/2026-09-23-a6898648-0472-49da-9a28-76d9f1502c97.jpg" alt="Home Support Staff">
+        </div>
+        <div class="gallery-caption i18n" data-ar="خدمات منزلية متكاملة">Reliable Home Support</div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ================= PROCESS ================= -->
-<section class="section" id="process">
+<section class="section on-sage" id="process">
   <div class="wrap">
     <div class="section-head">
       <span class="kicker i18n" data-ar="كيف نعمل">How it works</span>
@@ -887,7 +946,7 @@
   </div>
 </section>
 
-<!-- ================= IMPROVEMENT 2: FAQ ACCORDION SECTION ================= -->
+<!-- ================= FAQ ACCORDION SECTION ================= -->
 <section class="section on-sage" id="faq">
   <div class="wrap">
     <div class="section-head">
@@ -924,7 +983,7 @@
       <div class="faq-item">
         <button type="button">
           <span class="i18n" data-ar="هل الخيارات المتاحة للدوام الكلي أم الجزئي؟">Are full-time or part-time options available?</span>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
         </button>
         <div class="faq-answer i18n" data-ar="نوفر ترتيبات إقامة كاملة أو دوام جزئي حسب متطلبات العائلة ونظام العمل المفضل لديكم.">We support both full-time live-in arrangements as well as flexible schedules according to your household structure.</div>
       </div>
@@ -961,7 +1020,6 @@
       </div>
     </div>
 
-    <!-- IMPROVEMENT 6: Enhanced Interactive Form Feedback -->
     <div class="contact-card form-card">
       <h3 class="i18n" data-ar="اطلبوا موظفة الآن">Request staff</h3>
       <p class="sub i18n" data-ar="سنعاود التواصل معكم خلال ساعات قليلة.">We'll get back to you within a few hours.</p>
@@ -1012,6 +1070,7 @@
       <ul>
         <li><a href="#services" class="i18n" data-ar="خدماتنا">Services</a></li>
         <li><a href="#profiles" class="i18n" data-ar="المرشحات">Candidates</a></li>
+        <li><a href="#gallery" class="i18n" data-ar="معرض الصور">Gallery</a></li>
         <li><a href="#why" class="i18n" data-ar="لماذا نحن">Why Us</a></li>
         <li><a href="#process" class="i18n" data-ar="كيف نعمل">How It Works</a></li>
         <li><a href="#contact" class="i18n" data-ar="تواصل معنا">Contact</a></li>
@@ -1027,7 +1086,6 @@
       </ul>
     </div>
     <div>
-      <!-- IMPROVEMENT 5: Legal Policy Footer Links -->
       <h4 class="i18n" data-ar="السياسات والخصوصية">Legal &amp; Policy</h4>
       <ul>
         <li><a href="#" id="link-privacy" class="i18n" data-ar="سياسة الخصوصية">Privacy Policy</a></li>
@@ -1043,7 +1101,6 @@
   </div>
 </footer>
 
-<!-- IMPROVEMENT 5 (Modal Overlay for Privacy & Terms) -->
 <div class="modal-overlay" id="legal-modal">
   <div class="modal-box">
     <button class="modal-close" id="modal-close-btn">&times;</button>
@@ -1052,7 +1109,6 @@
   </div>
 </div>
 
-<!-- IMPROVEMENT 4: Pre-filled WhatsApp Button -->
 <a class="fab-whatsapp wa-dynamic-link" href="https://wa.me/966572453774?text=Hello,%20I%20am%20interested%20in%20hiring%20a%20housemaid/nanny%20in%20Riyadh." target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
   <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.28-1.38a9.9 9.9 0 0 0 4.71 1.2h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.87 9.87 0 0 0 12.04 2zm4.52 12.12c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.13-.17.25-.64.81-.78.97-.14.17-.29.19-.53.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.17.04-.31-.02-.44-.06-.12-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.87.85-.87 2.08s.89 2.41 1.01 2.58c.13.17 1.75 2.67 4.24 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.55.1.47-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.14-1.18-.06-.11-.23-.17-.48-.29z"/></svg>
 </a>
@@ -1068,7 +1124,6 @@
     var btnEn = document.getElementById('btn-en');
     var btnAr = document.getElementById('btn-ar');
 
-    /* IMPROVEMENT 4: Dynamic WhatsApp Pre-filled Links based on active language */
     function updateWhatsAppLinks(lang) {
       var waLinks = document.querySelectorAll('.wa-dynamic-link');
       var msg = lang === 'ar' 
@@ -1143,7 +1198,7 @@
       });
     }
 
-    /* IMPROVEMENT 2: FAQ Accordion Toggle */
+    /* FAQ Accordion Toggle */
     var faqButtons = document.querySelectorAll('.faq-item button');
     faqButtons.forEach(function(btn){
       btn.addEventListener('click', function(){
@@ -1152,7 +1207,7 @@
       });
     });
 
-    /* IMPROVEMENT 5: Legal Modal Logic */
+    /* Legal Modal Logic */
     var modal = document.getElementById('legal-modal');
     var modalTitle = document.getElementById('modal-title');
     var modalBody = document.getElementById('modal-body');
@@ -1181,7 +1236,7 @@
     modalClose.addEventListener('click', function(){ modal.classList.remove('active'); });
     modal.addEventListener('click', function(e){ if(e.target === modal) modal.classList.remove('active'); });
 
-    /* IMPROVEMENT 6: Interactive Form Submission Handling */
+    /* Interactive Form Submission Handling */
     var form = document.getElementById('request-form');
     var status = document.getElementById('form-status');
     form.addEventListener('submit', function(e){
